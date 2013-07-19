@@ -23,24 +23,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// This is all copied from block_html - I assume the same capabilities
-// will be appropriate
+// Capabilities similar to block_html, without myaddinstance
 
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/html:myaddinstance' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'user' => CAP_ALLOW
-        ),
-
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
-
-    'block/html:addinstance' => array(
+    'block/unitu:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 
         'captype' => 'write',

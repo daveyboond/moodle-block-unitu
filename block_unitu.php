@@ -77,7 +77,7 @@ class block_unitu extends block_base {
         }
         
         // Check if course exists and information returned
-        if ($response['Error']) {
+        if (isset($response['Error'])) {
             //  Course does not exist        
             $this->content->text = $response['Error'];
         } else {
