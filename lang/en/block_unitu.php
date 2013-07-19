@@ -23,6 +23,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$string['isonunitu'] = 'is on Unitu';
 $string['pluginname'] = 'Unitu';
+$string['posts'] = 'Posts';
+$string['questions'] = 'Questions';
 $string['unitu'] = 'Unitu';
+$string['users'] = 'Classmates';
+
 ?>

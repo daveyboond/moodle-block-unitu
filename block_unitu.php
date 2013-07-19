@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
     /**
-     * Show What You Write interface
+     * Unitu interface
      *
      * @package    block
      * @subpackage unitu
@@ -49,10 +49,6 @@ class block_unitu extends block_base {
         $this->content->icons  = array();
         $this->content->footer = '';
 
-// Capability test here - decide which one is appropriate
-/*        if (has_capability('moodle/site:viewreports', $PAGE->context)) { // Basic capability for listing of reports.
-        } */
-        
         // Get current course code or ID if set
         $coursecode = empty($COURSE->idnumber) ? $COURSE->shortname : $COURSE->idnumber;
         
@@ -83,10 +79,12 @@ class block_unitu extends block_base {
         } else {
             // Output block content
             $this->content->text = '<a href="'.$response['Url']
-                .'" target="_blank">'.$coursecode.'</a> is on Unitu.<br /><br />Users: <a href="'
-                .$response['UsersUrl'].'" target="_blank">'.$response['Users']
-                .'</a><br />Questions: '.$response['Questions'].'<br />Posts: '
-                .$response['Posts'];
+                .'" target="_blank">'.$coursecode.'</a> '
+                .get_string('isonunitu','block_unitu').'<br /><br />'
+                .get_string('users','block_unitu').': <a href="'.$response['UsersUrl']
+                .'" target="_blank">'.$response['Users'].'</a><br />'
+                .get_string('questions','block_unitu').': '.$response['Questions']
+                .'<br />'.get_string('posts','block_unitu').': '.$response['Posts'];
         }
 
         return $this->content;
