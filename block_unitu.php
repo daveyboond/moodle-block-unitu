@@ -36,7 +36,7 @@ class block_unitu extends block_base {
     // The PHP tag and the curly bracket for the class definition
     // will only be closed after there is another function added in the next section.
     public function get_content() {
-        global $COURSE;
+        global $COURSE, $OUTPUT;
         
         $remoteurl = 'http://unitu.co.uk/api/moodle/3?code=';
         
@@ -75,14 +75,14 @@ class block_unitu extends block_base {
         // Check if course exists and information returned
         if (isset($response['Error'])) {
             //  Course does not exist        
-            $this->content->text = $response['Error'];
+            $this->content->text = $response['Error'].$OUTPUT->help_icon('unitu','block_unitu');
         } else {
             // Output block content
             $this->content->text = '<a href="'.$response['Url']
                 .'" target="_blank">'.$coursecode.'</a> '
-                .get_string('isonunitu','block_unitu').'<br /><br />'
-                .get_string('users','block_unitu').': <a href="'.$response['UsersUrl']
-                .'" target="_blank">'.$response['Users'].'</a><br />'
+                .get_string('isonunitu','block_unitu').$OUTPUT->help_icon('unitu','block_unitu')
+                .'<br /><br />'.get_string('users','block_unitu').': <a href="'
+                .$response['UsersUrl'].'" target="_blank">'.$response['Users'].'</a><br />'
                 .get_string('questions','block_unitu').': '.$response['Questions']
                 .'<br />'.get_string('posts','block_unitu').': '.$response['Posts'];
         }

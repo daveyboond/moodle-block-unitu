@@ -28,6 +28,7 @@ $string['pluginname'] = 'Unitu';
 $string['posts'] = 'Posts';
 $string['questions'] = 'Questions';
 $string['unitu'] = 'Unitu';
+$string['unitu_help'] = 'Unitu is a site that allows you and your classmates to connect, learn and share with each other. You can share files, discuss topics, ask questions and organise private study groups. Unitu is not an LSE system, but it is free to use.';
 $string['users'] = 'Classmates';
 
 ?>
