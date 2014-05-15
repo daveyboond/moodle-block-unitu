@@ -1,1 +1,1 @@
-Unitu integration
+Unitu integration. Install into /moodle/blocks/unitu
